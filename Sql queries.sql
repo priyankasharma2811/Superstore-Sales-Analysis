@@ -7,6 +7,7 @@ SELECT CONVERT((ShippedOnTime * 1.0) / (NULLIF(TotalOrdersShipped * 1.0,0)*100),
     from be0295df.superstore ) as t;
 
 /* output 
+
 Same_Day_Shipping_Percentage
 0.0
 */
@@ -18,7 +19,7 @@ select  Customer_Name,sum(Sales) as TotalOrderValue from be0295df.superstore gro
 /* output 
 
 Customer_Name	TotalOrderValue
-Sean Miller		24516.6000
+Sean Miller	24516.6000
 Tamara Chand	19044.9060
 Raymond Buch	15056.8540
 
@@ -31,7 +32,7 @@ select Product_ID,  Average_Sales from(
 where t.rank1<=5;
 
 /* output 
-Product_ID			Average_Sales
+Product_ID		Average_Sales
 TEC-MA-10002412		22638.48000000
 TEC-CO-10004722		12319.96480000
 TEC-MA-10004125		7999.98000000
@@ -97,12 +98,12 @@ select t1.City ,t1.highest_order_sales , t2.lowest_order_sales,t1.max_customer,t
 
 
 /* Glimpse of output 
-City		highest_order_sales	lowest_order_sales	max_customer	min_customer	
-Aberdeen	25.5				25.5				Jeremy Lonsdale	Jeremy Lonsdale	
+City		highest_order_sales	lowest_order_sales			max_customer	        min_customer	
+Aberdeen	25.5				25.5				Jeremy Lonsdale	       Jeremy Lonsdale	
 Abilene		1.392				1.392				Dennis Kane		Dennis Kane	
 Akron		949.772				17.184				Ed Braxton		Ross DeVincentis	
 Albuquerque	780.086				27.18				Benjamin 		Farhat	David Wiener	
-Alexandria	4251.92				24.56				Greg Maxwell	Roy Collins	
+Alexandria	4251.92				24.56				Greg Maxwell	        Roy Collins	
 Allen		259.942				30.264				Anna Gayman		Anthony Witt	
 Allentown	837.444				15.808				Sean Miller		Caroline Jumper	
 */
@@ -116,7 +117,7 @@ select Sub_Category ,sub_count from (
 where rnk3<=1
 
 /* output 
-Sub_Category	sub_count
+Sub_Category		sub_count
 Chairs			86795.7600
 
 
@@ -132,7 +133,7 @@ select Order_ID as Highest_number_of_items,total  from (
 t.rnk_max<=1
 
 /* output 
-Highest_number_of_items		total
+Highest_number_of_items			total
 CA-2018-100111				14
 
 
@@ -145,7 +146,7 @@ select Order_ID as highest_cumulative_value, total_sales from (
 where t1.rnk<=1
 
 /* output 
-highest_cumulative_value	total_sales
+highest_cumulative_value		total_sales
 CA-2015-145317				23661.2280
 
 */
@@ -181,8 +182,8 @@ where rnk2=1
 
 /* output 
 
-City	TotalSales	
-Abilene	1.3920
+City		TotalSales	
+Abilene		1.3920
 
 -- Query 11 
 -- What is the average time for orders to get shipped after order is placed?
